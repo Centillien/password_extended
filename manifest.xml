@@ -5,7 +5,7 @@
     <version>1.0</version>
     <category>secondment</category>
     <description>In deze plugin activeerd een extra wachtwoord beleid.</description>
-    <website>http://www.netcare.nl/</website>
+    <website>https://www.netcare.nl/</website>
     <license>GNU General Public License version 2</license>
     <requires>
         <type>myvox_release</type>
