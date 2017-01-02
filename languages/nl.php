@@ -30,39 +30,41 @@ $dutch = [
     /* register user */
 
     'password_extended:register:password' => 'Wachtwoord',
-    'password_extended:register:password_retype' => 'Wachtwoord (nogmaals, voor de zekerheid) *',
+    'password_extended:register:password_retype' => 'Wachtwoord (nogmaals, voor de zekerheid)',
 
     /* Requirements */
-    'password_extended:requirements' => 'Voldoe aan deze criteriums:',
+    'password_extended:requirements' => 'Voldoe aan deze criteria:',
     'password_extended:require:long' => '<b>%s</b> karakters lang.',
-    'password_extended:require:numbers' => 'Minimaal <b>%s</b> nummer(s).',
-    'password_extended:require:symbols' => 'Minimaal <b>%s</b> symbol(s).',
-    'password_extended:require:lowercase' => 'Minimaal <b>%s</b> kleine letter(s).',
-    'password_extended:require:uppercase' => 'Minimaal <b>%s</b> hoofdletter(s).',
+    'password_extended:require:numbers' => 'Minimaal <b>%s</b> nummer.',
+    'password_extended:require:symbols' => 'Minimaal <b>%s</b> symbool.',
+    'password_extended:require:lowercase' => 'Minimaal <b>%s</b> letter.',
+    'password_extended:require:uppercase' => 'Minimaal <b>%s</b> hoofdletter.',
 
     // Plugin extended view settings/user
     'password_extended:renew_password' => 'Wachtwoord vernieuwen',
-    'password_extended:renew' => 'Vernieuwen',
+    'password_extended:renew' => 'Nieuwe wachtwoord opslaan',
     'password_extended:password_header' => 'Account wachtwoord *',
     'password_extended:current_password' => 'Huidige wachtwoord *',
     'password_extended:new_password' => 'Uw nieuw wachtwoord *',
     'password_extended:retype_password' => 'Voer nogmaals uw nieuw wachtwoord in *',
     'password_extended:finished' => 'Uw wachtwoord is aangepast.',
-    'password:finished_message' => 'Hallo %s uw wachtwoord is vernieuwd, success ',
+    'password:finished_message' => 'Beste %s, uw wachtwoord is succesvol aangepast.',
     'password_extended:successfully' => 'Succesvol vernieuwd.',
     'password_extended:failed' => 'Mislukt wachtwoord te wijzigen.',
     /* scripts */
     'script:short'=>'Zwak! (Minimaal %s of meer chars)',
-    'script:strong:very'=>'Zeer goed! (Geweldig, vergeet niet uw wachtwoord!)',
-    'script:strong'=>'Beter! (Voer speciale tekens om nog sterker te maken',
-    'script:good'=>'Goed! (Voer hoofdletters om het beter te maken)',
+    'script:strong:very'=>'Zeer goed!',
+    'script:strong'=>'Beter! Voeg speciale tekens om het nog sterker te maken',
+    'script:good'=>'Goed! Voeg een hoofdletter toe om je wachtwoord nog sterker te maken)',
     'script:weak'=>'Nog steeds zwak! (Voer cijfers om een goed wachtwoord te maken',
 
     'script:mismatch'=> 'Wachtwoorden komen niet overeen!',
     'script:matched'=> 'Wachtwoorden komen overeen!',
 
-
-
+    /* Fixes */
+    'email:settings' => "E-mailinstellingen",
+    'user:set:language' => "Taalinstelling",
+    'email' => "E-mailadres",
 
 ];
 
