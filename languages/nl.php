@@ -20,11 +20,11 @@ $dutch = [
     'password_extended:settings:password_expired' => 'Aanzetten wachtwoord verlopen datum',
 
     'password_extended:login:strict' => 'Alstublief vernieuw uw huidige wachtwoord',
-    'password_extended:password1:failed' => 'Fout in nieuw wachtwoord: %s',
+    'password_extended:password1:failed' => 'Fout in nieuwe wachtwoord: %s',
     'password_extended:password2:failed' => 'Fout in herhaald wachtwoord: %s',
 
     'password_extended:password:compare' => 'Ongelijke wachtworden.',
-    'password_extended:password1:failed' => 'Fout in nieuw wachtwoord.',
+    'password_extended:password1:failed' => 'Fout in nieuwe wachtwoord.',
     'password_extended:password2:failed' => 'Fout in herhaald wachtwoord.',
 
     /* register user */
@@ -45,8 +45,8 @@ $dutch = [
     'password_extended:renew' => 'Nieuwe wachtwoord opslaan',
     'password_extended:password_header' => 'Account wachtwoord *',
     'password_extended:current_password' => 'Huidige wachtwoord *',
-    'password_extended:new_password' => 'Uw nieuw wachtwoord *',
-    'password_extended:retype_password' => 'Voer nogmaals uw nieuw wachtwoord in *',
+    'password_extended:new_password' => 'Uw nieuwe wachtwoord *',
+    'password_extended:retype_password' => 'Voer nogmaals uw nieuwe wachtwoord in *',
     'password_extended:finished' => 'Uw wachtwoord is aangepast.',
     'password:finished_message' => 'Beste %s, uw wachtwoord is succesvol aangepast.',
     'password_extended:successfully' => 'Succesvol vernieuwd.',
