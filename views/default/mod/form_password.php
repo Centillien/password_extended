@@ -1,67 +1,67 @@
 <?php
 
-myvox_load_js('myvox.password_extended');
+elgg_load_js('elgg.password_extended');
 
-$setting['minSymbols'] = myvox_get_plugin_setting('use_symbols', 'password_extended');
-$setting['minNumbers'] = myvox_get_plugin_setting('use_numbers', 'password_extended');
-$setting['minLowerCaseLetters'] = myvox_get_plugin_setting('use_lowercase', 'password_extended');
-$setting['minUpperCaseLetters'] = myvox_get_plugin_setting('use_uppercase', 'password_extended');
-$setting['minLength'] = myvox_get_plugin_setting('password_lenght_min', 'password_extended');
-$setting['maxLength'] = myvox_get_plugin_setting('max_lenght_password', 'password_extended');
+$setting['minSymbols'] = elgg_get_plugin_setting('use_symbols', 'password_extended');
+$setting['minNumbers'] = elgg_get_plugin_setting('use_numbers', 'password_extended');
+$setting['minLowerCaseLetters'] = elgg_get_plugin_setting('use_lowercase', 'password_extended');
+$setting['minUpperCaseLetters'] = elgg_get_plugin_setting('use_uppercase', 'password_extended');
+$setting['minLength'] = elgg_get_plugin_setting('password_lenght_min', 'password_extended');
+$setting['maxLength'] = elgg_get_plugin_setting('max_lenght_password', 'password_extended');
 
-$use_symbols_value = ($setting['minSymbols'] == 'yes') ? myvox_get_plugin_setting('use_symbols_value', 'password_extended') : 0;
-$use_numbers_value = ($setting['minNumbers'] == 'yes') ? myvox_get_plugin_setting('use_numbers_value', 'password_extended') : 0;
-$use_lowercase_value = ($setting['minLowerCaseLetters'] == 'yes') ? myvox_get_plugin_setting('use_lowercase_value', 'password_extended'): 0;
-$use_uppercase_value = ($setting['minUpperCaseLetters'] == 'yes') ? myvox_get_plugin_setting('use_uppercase_value', 'password_extended'): 0;
+$use_symbols_value = ($setting['minSymbols'] == 'yes') ? elgg_get_plugin_setting('use_symbols_value', 'password_extended') : 0;
+$use_numbers_value = ($setting['minNumbers'] == 'yes') ? elgg_get_plugin_setting('use_numbers_value', 'password_extended') : 0;
+$use_lowercase_value = ($setting['minLowerCaseLetters'] == 'yes') ? elgg_get_plugin_setting('use_lowercase_value', 'password_extended'): 0;
+$use_uppercase_value = ($setting['minUpperCaseLetters'] == 'yes') ? elgg_get_plugin_setting('use_uppercase_value', 'password_extended'): 0;
 
-$password_min_lenght_value = ($setting['minLength'] == 'yes') ? myvox_get_plugin_setting('password_min_lenght_value', 'password_extended') : 6;
-$password_max_lenght_value = ($setting['maxLength'] == 'yes') ? myvox_get_plugin_setting('password_max_lenght_value', 'password_extended'): 50;
+$password_min_lenght_value = ($setting['minLength'] == 'yes') ? elgg_get_plugin_setting('password_min_lenght_value', 'password_extended') : 6;
+$password_max_lenght_value = ($setting['maxLength'] == 'yes') ? elgg_get_plugin_setting('password_max_lenght_value', 'password_extended'): 50;
 ?>
 
-<div class="myvox-module myvox-module-info">
-    <div class="myvox-head"><h3><?php echo myvox_echo('password_extended:password_header'); ?></h3></div>
-    <div class="myvox-body">
-        <div class="myvox-field">
-            <label for="myvox-field-ue2gm5"
-                   class="myvox-field-label"><?php echo myvox_echo('password_extended:current_password'); ?></label>
+<div class="elgg-module elgg-module-info">
+    <div class="elgg-head"><h3><?php echo elgg_echo('password_extended:password_header'); ?></h3></div>
+    <div class="elgg-body">
+        <div class="elgg-field">
+            <label for="elgg-field-ue2gm5"
+                   class="elgg-field-label"><?php echo elgg_echo('password_extended:current_password'); ?></label>
             <input value="" autocapitalize="off" autocorrect="off" type="password" name="current_password"
-                   id="current_password" class="myvox-input-password">
+                   id="current_password" class="elgg-input-password">
         </div>
-        <div class="myvox-field">
-            <label for="myvox-field-vts7sq"
-                   class="myvox-field-label"><?php echo myvox_echo('password_extended:new_password'); ?></label>
+        <div class="elgg-field">
+            <label for="elgg-field-vts7sq"
+                   class="elgg-field-label"><?php echo elgg_echo('password_extended:new_password'); ?></label>
             <input value="" autocapitalize="off" autocorrect="off" type="password" name="password" id="password"
-                   maxlength="<?= ($setting['maxLength']=='yes') ? $password_max_lenght_value : '' ?>" class="myvox-input-password">
+                   maxlength="<?= ($setting['maxLength']=='yes') ? $password_max_lenght_value : '' ?>" class="elgg-input-password">
             <div id="pass-info">
             </div>
             <br>
-            <div id="retype_password" class="myvox-field">
-                <label for="myvox-field-8vleod"
-                       class="myvox-field-label"><?php echo myvox_echo('password_extended:retype_password'); ?></label>
+            <div id="retype_password" class="elgg-field">
+                <label for="elgg-field-8vleod"
+                       class="elgg-field-label"><?php echo elgg_echo('password_extended:retype_password'); ?></label>
                 <input value="" autocapitalize="off" autocorrect="off" type="password" name="password2" id="password2"
-                       maxlength="<?= ($setting['maxLength']=='yes') ? $password_max_lenght_value : '' ?>" class="myvox-input-password">
+                       maxlength="<?= ($setting['maxLength']=='yes') ? $password_max_lenght_value : '' ?>" class="elgg-input-password">
             </div>
         </div>
     </div>
 
     <div id="container">
         <div id="pswd_info">
-            <h4><?php echo myvox_echo('password_extended:requirements'); ?></h4>
+            <h4><?php echo elgg_echo('password_extended:requirements'); ?></h4>
             <ul>
                 <span id="valid_length"
-                      class="invalid"><?php echo ($setting['minLength']==='yes') ? myvox_echo('password_extended:require:long', [$password_min_lenght_value]) :''; ?></span>
+                      class="invalid"><?php echo ($setting['minLength']==='yes') ? elgg_echo('password_extended:require:long', [$password_min_lenght_value]) :''; ?></span>
 
                 <span id="valid_number"
-                      class="invalid"><?php echo ($setting['minNumbers']==='yes') ? myvox_echo('password_extended:require:numbers', [$use_numbers_value]) : ''; ?></span>
+                      class="invalid"><?php echo ($setting['minNumbers']==='yes') ? elgg_echo('password_extended:require:numbers', [$use_numbers_value]) : ''; ?></span>
 
                 <span id="valid_symbol"
-                      class="invalid"><?php echo ($setting['minSymbols']==='yes') ? myvox_echo('password_extended:require:symbols', [$use_symbols_value]) : ''; ?></span><br>
+                      class="invalid"><?php echo ($setting['minSymbols']==='yes') ? elgg_echo('password_extended:require:symbols', [$use_symbols_value]) : ''; ?></span><br>
 
                 <span id="valid_lower"
-                      class="invalid"><?php echo ($setting['minLowerCaseLetters']==='yes') ? myvox_echo('password_extended:require:lowercase', [$use_lowercase_value]) : ''; ?></span>
+                      class="invalid"><?php echo ($setting['minLowerCaseLetters']==='yes') ? elgg_echo('password_extended:require:lowercase', [$use_lowercase_value]) : ''; ?></span>
 
                 <span id="valid_capital"
-                      class="invalid"><?php echo ($setting['minUpperCaseLetters']==='yes') ? myvox_echo('password_extended:require:uppercase', [$use_uppercase_value]) : ''; ?></span>
+                      class="invalid"><?php echo ($setting['minUpperCaseLetters']==='yes') ? elgg_echo('password_extended:require:uppercase', [$use_uppercase_value]) : ''; ?></span>
             </ul>
         </div>
     </div>
@@ -102,23 +102,23 @@ $password_max_lenght_value = ($setting['maxLength'] == 'yes') ? myvox_get_plugin
                 var counter = 0;
 
                 if (VryStrongPass.test(password.val())) {
-                    passwordsInfo.removeClass().addClass('vrystrongpass').html("<?= myvox_echo('script:strong:very', []); ?>");
+                    passwordsInfo.removeClass().addClass('vrystrongpass').html("<?= elgg_echo('script:strong:very', []); ?>");
                     document.getElementById('retype_password').style.display = "block";
                 }
                 else if (StrongPass.test(password.val())) {
-                    passwordsInfo.removeClass().addClass('strongpass').html("<?= myvox_echo('script:strong', []); ?>");
+                    passwordsInfo.removeClass().addClass('strongpass').html("<?= elgg_echo('script:strong', []); ?>");
                     document.getElementById('retype_password').style.display = "none";
                 }
                 else if (MediumPass.test(password.val())) {
-                    passwordsInfo.removeClass().addClass('goodpass').html("<?= myvox_echo('script:good', []); ?>");
+                    passwordsInfo.removeClass().addClass('goodpass').html("<?= elgg_echo('script:good', []); ?>");
                     document.getElementById('retype_password').style.display = "none";
                 }
                 else if (WeakPass.test(password.val())) {
-                    passwordsInfo.removeClass().addClass('stillweakpass').html("<?= myvox_echo('script:weak', []); ?>");
+                    passwordsInfo.removeClass().addClass('stillweakpass').html("<?= elgg_echo('script:weak', []); ?>");
                     document.getElementById('retype_password').style.display = "none";
                 }
                 else {
-                    passwordsInfo.removeClass().addClass('weakpass').html("<?= myvox_echo('script:short', [$password_min_lenght_value]); ?>");
+                    passwordsInfo.removeClass().addClass('weakpass').html("<?= elgg_echo('script:short', [$password_min_lenght_value]); ?>");
                     document.getElementById('retype_password').style.display = "none";
                 }
 
@@ -178,9 +178,9 @@ $password_max_lenght_value = ($setting['maxLength'] == 'yes') ? myvox_get_plugin
             $(password2).keyup( function (e) {
 
                 if (password.val() !== password2.val()) {
-                    passwordsInfo.removeClass().addClass('weakpass').html("<?= myvox_echo('script:mismatch')?>");
+                    passwordsInfo.removeClass().addClass('weakpass').html("<?= elgg_echo('script:mismatch')?>");
                 } else {
-                    passwordsInfo.removeClass().addClass('vrystrongpass').html("<?= myvox_echo('script:matched')?>");
+                    passwordsInfo.removeClass().addClass('vrystrongpass').html("<?= elgg_echo('script:matched')?>");
                 }
 
             });

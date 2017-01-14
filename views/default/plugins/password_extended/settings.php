@@ -2,27 +2,27 @@
 <?php
     Global $CONFIG;
 
-    $plugin = myvox_extract('entity', $vars);
+    $plugin = elgg_extract('entity', $vars);
 
     $noyes_options = [
-        'no' => myvox_echo('option:no'),
-        'yes' => myvox_echo('option:yes'),
+        'no' => elgg_echo('option:no'),
+        'yes' => elgg_echo('option:yes'),
     ];
     $yesno_options = array_reverse($noyes_options);
 
 ?>
 
     <!-- Symbols -->
-<div class="myvox-module myvox-module-inline">
-    <div class="myvox-head"><h3><?= myvox_echo('password_extended:settings') ?></h3></div>
-    <div class="myvox-body">
-        <table class="myvox-table">
+<div class="elgg-module elgg-module-inline">
+    <div class="elgg-head"><h3><?= elgg_echo('password_extended:settings') ?></h3></div>
+    <div class="elgg-body">
+        <table class="elgg-table">
             <tbody>
             <!-- Symbols -->
             <tr>
-                <td><?= myvox_echo('password_extended:settings:use_symbols') ?></td>
+                <td><?= elgg_echo('password_extended:settings:use_symbols') ?></td>
                 <td><?php
-                    echo myvox_view('input/dropdown', [
+                    echo elgg_view('input/dropdown', [
                         'name' => 'params[use_symbols]',
                         'options_values' => $yesno_options,
                         'value' => $plugin->use_symbols,
@@ -32,9 +32,9 @@
                     ?></td>
             </tr>
             <tr>
-                <td><?= myvox_echo('password_extended:settings:use_symbols_value') ?></td>
+                <td><?= elgg_echo('password_extended:settings:use_symbols_value') ?></td>
                 <td><?php
-                    echo myvox_view('input/text', [
+                    echo elgg_view('input/text', [
                         'name' => 'params[use_symbols_value]',
                         'maxlength' => 1,
                         'style' => "width: 50px;",
@@ -46,9 +46,9 @@
 
             <!-- Numbers -->
             <tr>
-                <td><?= myvox_echo('password_extended:settings:use_numbers') ?></td>
+                <td><?= elgg_echo('password_extended:settings:use_numbers') ?></td>
                 <td><?php
-                    echo myvox_view('input/dropdown', [
+                    echo elgg_view('input/dropdown', [
                         'name' => 'params[use_numbers]',
                         'options_values' => $yesno_options,
                         'value' => $plugin->use_numbers,
@@ -58,9 +58,9 @@
                     ?></td>
             </tr>
             <tr>
-                <td><?= myvox_echo('password_extended:settings:use_numbers_value') ?></td>
+                <td><?= elgg_echo('password_extended:settings:use_numbers_value') ?></td>
                 <td><?php
-                    echo myvox_view('input/text', [
+                    echo elgg_view('input/text', [
                         'name' => 'params[use_numbers_value]',
                         'maxlength' => 1,
                         'style' => "width: 50px;",
@@ -71,9 +71,9 @@
             </tr>
             <!-- lowercase -->
             <tr>
-                <td><?= myvox_echo('password_extended:settings:use_lowercase') ?></td>
+                <td><?= elgg_echo('password_extended:settings:use_lowercase') ?></td>
                 <td><?php
-                    echo myvox_view('input/dropdown', [
+                    echo elgg_view('input/dropdown', [
                         'name' => 'params[use_lowercase]',
                         'options_values' => $yesno_options,
                         'value' => $plugin->use_lowercase,
@@ -84,9 +84,9 @@
                     ?></td>
             </tr>
             <tr>
-                <td><?= myvox_echo('password_extended:settings:use_lowercase_value') ?></td>
+                <td><?= elgg_echo('password_extended:settings:use_lowercase_value') ?></td>
                 <td><?php
-                    echo myvox_view('input/text', [
+                    echo elgg_view('input/text', [
                         'name' => 'params[use_lowercase_value]',
                         'maxlength' => 1,
                         'style' => "width: 50px;",
@@ -97,9 +97,9 @@
             </tr>
             <!-- uppercase -->
             <tr>
-                <td><?= myvox_echo('password_extended:settings:use_uppercase') ?></td>
+                <td><?= elgg_echo('password_extended:settings:use_uppercase') ?></td>
                 <td><?php
-                    echo myvox_view('input/dropdown', [
+                    echo elgg_view('input/dropdown', [
                         'name' => 'params[use_uppercase]',
                         'options_values' => $yesno_options,
                         'value' => $plugin->use_uppercase,
@@ -110,9 +110,9 @@
                     ?></td>
             </tr>
             <tr>
-                <td><?= myvox_echo('password_extended:settings:use_uppercase_value') ?></td>
+                <td><?= elgg_echo('password_extended:settings:use_uppercase_value') ?></td>
                 <td><?php
-                    echo myvox_view('input/text', [
+                    echo elgg_view('input/text', [
                         'name' => 'params[use_uppercase_value]',
                         'maxlength' => 1,
                         'style' => "width: 50px;",
@@ -124,9 +124,9 @@
 
             <!-- password_min_lenght  -->
             <tr>
-                <td><?= myvox_echo('password_extended:settings:password_min_lenght') ?></td>
+                <td><?= elgg_echo('password_extended:settings:password_min_lenght') ?></td>
                 <td><?php
-                    echo myvox_view('input/dropdown', [
+                    echo elgg_view('input/dropdown', [
                         'name' => 'params[password_lenght_min]',
                         'options_values' => $yesno_options,
                         'value' => ($CONFIG->password_lenght_min) ? $plugin->password_lenght_min : 'yes',
@@ -137,9 +137,9 @@
                     ?></td>
             </tr>
             <tr>
-                <td><?= myvox_echo('password_extended:settings:password_min_lenght_value') ?> <?php echo $CONFIG->min_password_length ?></td>
+                <td><?= elgg_echo('password_extended:settings:password_min_lenght_value') ?> <?php echo $CONFIG->min_password_length ?></td>
                 <td><?php
-                    echo myvox_view('input/text', [
+                    echo elgg_view('input/text', [
                         'name' => 'params[password_min_lenght_value]',
                         'maxlength' => 1,
                         'style' => "width: 50px;",
@@ -150,9 +150,9 @@
             </tr>
             <!-- password_max_lenght  -->
             <tr>
-                <td><?= myvox_echo('password_extended:settings:password_max_lenght') ?></td>
+                <td><?= elgg_echo('password_extended:settings:password_max_lenght') ?></td>
                 <td><?php
-                    echo myvox_view('input/dropdown', [
+                    echo elgg_view('input/dropdown', [
                         'name' => 'params[max_lenght_password]',
                         'options_values' => $yesno_options,
                         'value' => $plugin->max_lenght_password,
@@ -162,9 +162,9 @@
                     ?></td>
             </tr>
             <tr>
-                <td><?= myvox_echo('password_extended:settings:password_max_lenght_value') ?></td>
+                <td><?= elgg_echo('password_extended:settings:password_max_lenght_value') ?></td>
                 <td><?php
-                    echo myvox_view('input/text', [
+                    echo elgg_view('input/text', [
                         'name' => 'params[password_max_lenght_value]',
                         'maxlength' => 2,
                         'style' => "width: 50px;",
@@ -175,9 +175,9 @@
             </tr>
             <!--
             <tr>
-                <td><?= myvox_echo('password_extended:settings:password_expired') ?></td>
+                <td><?= elgg_echo('password_extended:settings:password_expired') ?></td>
                 <td><?php
-                    echo myvox_view('input/dropdown', [
+                    echo elgg_view('input/dropdown', [
                         'name' => 'params[expired_password]',
                         'options_values' => $yesno_options,
                         'value' => $plugin->expired_password,
